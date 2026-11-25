@@ -23,6 +23,10 @@
 #include <UniversalTelegramBot.h>
 #include <time.h>
 #include <math.h>
+#include <esp_system.h>
+#if defined(DRAGON_HEALTHCHECKS_ACTIVE) && DRAGON_HEALTHCHECKS_ACTIVE
+#include <HTTPClient.h>
+#endif
 
 namespace {
 WebServer web(80);
@@ -106,6 +110,15 @@ uint32_t positionStartEpoch = 0;
 float soilDailySlope = NAN;
 float daysUntilCheck = NAN;
 bool lastSaveOK = true;
+bool storageFault = false;
+bool storageFaultSent = false;
+bool storageRecoveredPending = false;
+uint32_t monitorNotifyAttemptMs = 0;
+uint32_t wifiDownAtMs = 0;
+uint32_t recoveredWifiMinutes = 0;
+bool wifiRecoveredPending = false;
+int bootResetReason = 0;
+int lastHeartbeatHttp = 0;
 bool mdnsOK = false;
 bool wifiAnnounced = false;
 uint32_t lastMdnsAttemptMs=0;
@@ -325,9 +338,16 @@ bool appendLine(const String &path,const String &header,const String &line) {
   return ok;
 }
 String csvFloat(float v){ return valid(v)?String(v,2):String(""); }
+void pingExternalMonitor();
 void saveSample() {
   uint32_t epoch=nowEpoch();
-  if(!epoch || !filesystemOK) return;
+  // L'horloge peut etre indisponible au demarrage. Ne jamais ecrire sans date.
+  if(!filesystemOK || (!epoch && millis()>15UL*60000UL)) {
+    lastSaveOK=false; storageFault=true;
+    Serial.println("DragonFruit : stockage ou horloge indisponible");
+    return;
+  }
+  if(!epoch) return;
   // Jamais ecrire dans /d<jour>.csv de V2.2 (anciens en-tetes differents).
   String path="/v3/d"+String(epoch/86400UL)+".csv";
   String row=String(epoch)+";"+String(current.soil)+";"+
@@ -336,7 +356,14 @@ void saveSample() {
     csvFloat(current.pressure)+";"+csvFloat(current.lux)+";"+csvFloat(current.rootTemp);
   if(appendLine(path,"epoch;raw;min;max;temperature;humidite;pression;lux;sol_temp",row)) {
     lastSavedEpoch=epoch; lastSaveOK=true;
+    if(storageFault && storageFaultSent)storageRecoveredPending=true;
+    storageFault=false;
+    storageFaultSent=false;
     recalcSoilTrend();
+    pingExternalMonitor();
+  } else {
+    storageFault=true;lastSaveOK=false;
+    Serial.println("DragonFruit : echec de la sauvegarde CSV");
   }
 }
 
@@ -350,6 +377,46 @@ bool sendTelegram(const String &text) {
   bool result=telegram.sendMessage(String(DRAGON_TG_CHAT_ID),text,"");
   Serial.printf("Telegram send: %d\n",(int)result);
   return result;
+}
+// Detecter erreurs de stockage, retour Wi-Fi et avertir quand Internet fonctionne.
+void serviceDiagnostics() {
+  if(millis()-monitorNotifyAttemptMs<60000UL) return;
+  if(!telegramReady()) return;
+  if(storageFault && !storageFaultSent) {
+    monitorNotifyAttemptMs=millis();
+    if(sendTelegram("DragonFruit : echec de sauvegarde sur LittleFS ou horloge indisponible. Verifie /api/status et le stockage."))storageFaultSent=true;
+    return;
+  }
+  if(storageRecoveredPending) {
+    monitorNotifyAttemptMs=millis();
+    if(sendTelegram("DragonFruit : sauvegarde retablie. Les nouvelles mesures sont de nouveau ecrites."))storageRecoveredPending=false;
+    return;
+  }
+  if(wifiRecoveredPending) {
+    monitorNotifyAttemptMs=millis();
+    if(sendTelegram("DragonFruit : connexion Wi-Fi retablie apres environ "+String(recoveredWifiMinutes)+" minute(s) hors ligne."))wifiRecoveredPending=false;
+  }
+}
+
+// Uniquement si un Healthchecks personnel est configure localement.
+// Le moniteur externe signale les coupures totales et les absences de sauvegardes.
+// Le ping n'est emis qu'apres une sauvegarde reussie (toutes les 5 minutes).
+void pingExternalMonitor() {
+#if defined(DRAGON_HEALTHCHECKS_ACTIVE) && DRAGON_HEALTHCHECKS_ACTIVE
+  String url=String(DRAGON_HEALTHCHECKS_URL);
+  if(!url.startsWith("https://hc-ping.com/") || WiFi.status()!=WL_CONNECTED || !hasTime() || !lastSaveOK || storageFault)return;
+  WiFiClientSecure client;
+  // Compromis : pas de bundle CA additionnel dans le flash quasi plein.
+  // La verification TLS doit etre ajoutee lors d'une optimisation du firmware.
+  client.setInsecure();
+  HTTPClient http;
+  http.setConnectTimeout(3000);
+  http.setTimeout(3000);
+  if(!http.begin(client,url))return;
+  lastHeartbeatHttp=http.GET();
+  Serial.printf("DragonFruit heartbeat HTTP : %d\n",lastHeartbeatHttp);
+  http.end();
+#endif
 }
 void episode(Episode &e,bool condition,uint32_t confirmMs,const String &message) {
   if(!condition) {e.pending=false; e.active=false; return;}
@@ -427,6 +494,10 @@ String buildStatus() {
   s+=",\"fsUsed\":"+String(filesystemOK?LittleFS.usedBytes():0);
   s+=",\"fsTotal\":"+String(filesystemOK?LittleFS.totalBytes():0);
   s+=",\"lastSaveOK\":"+jsonBool(lastSaveOK);
+  s+=",\"storageFault\":"+jsonBool(storageFault);
+  s+=",\"resetReason\":"+String(bootResetReason);
+  s+=",\"freeHeap\":"+String(ESP.getFreeHeap());
+  s+=",\"lastHeartbeatHttp\":"+String(lastHeartbeatHttp);
   s+=",\"soilSlope\":"+num(soilDailySlope,1);
   s+=",\"daysToCheck\":"+num(daysUntilCheck,1);
   s+=",\"soil\":"+String(current.soil);
@@ -656,6 +727,11 @@ void telegramPoll() {
 
 void serviceWifi() {
   if(WiFi.status()==WL_CONNECTED) {
+    if(wifiDownAtMs!=0) {
+      uint32_t downtime=millis()-wifiDownAtMs;
+      if(downtime>=60000UL) {recoveredWifiMinutes=downtime/60000UL;wifiRecoveredPending=true;}
+      wifiDownAtMs=0;
+    }
     if(!wifiAnnounced) {
       wifiAnnounced=true;
       Serial.print("DragonFruit IP : ");Serial.println(WiFi.localIP().toString());
@@ -668,6 +744,7 @@ void serviceWifi() {
     return;
   }
   wifiAnnounced=false;
+  if(wifiDownAtMs==0)wifiDownAtMs=millis();
   if(mdnsOK){MDNS.end();mdnsOK=false;}
   if(millis()-lastWifiRetryMs<30000UL)return;
   lastWifiRetryMs=millis();
@@ -700,7 +777,9 @@ void registerRoutes() {
 void dragonSetup() {
   Serial.begin(115200);
   delay(150);
-  Serial.println("\n=== DragonFruit V3.0 ===");
+  Serial.println("\n=== DragonFruit V3.1 ===");
+  bootResetReason=(int)esp_reset_reason();
+  Serial.printf("Cause du redemarrage (esp_reset_reason) : %d\n",bootResetReason);
   analogReadResolution(12);
   analogSetPinAttenuation(PIN_SOIL,ADC_11db);
   loadSettings();
@@ -741,5 +820,6 @@ void dragonLoop() {
       current.soil,current.temp,current.rh,current.lux,dsOK?"oui":"attente",WiFi.localIP().toString().c_str());
   }
   telegramPoll();
+  serviceDiagnostics();
   delay(2);
 }

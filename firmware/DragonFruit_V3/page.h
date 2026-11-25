@@ -16,11 +16,21 @@ static const char DRAGON_PAGE[] PROGMEM = R"DRAGON(
 button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}a{color:var(--accent)}.wrap{max-width:1100px;margin:auto;padding:0 22px}.top{background:linear-gradient(125deg,#153d30,#285b44);color:#fff;position:relative;overflow:hidden}.top:after{content:"";position:absolute;right:-95px;top:-110px;width:350px;height:350px;border-radius:50%;border:55px solid #ffffff08;pointer-events:none}.topbar{height:80px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font-size:16px;letter-spacing:.5px;font-weight:800;display:flex;align-items:center;gap:12px}.brandIcon{width:36px;height:36px;background:#e3f1df25;border:1px solid #a6d6b44d;border-radius:11px;display:flex;align-items:center;justify-content:center}.on{display:flex;gap:7px;align-items:center;font-size:12px;color:#bfe5c9}.dot{width:8px;height:8px;border-radius:50%;background:#75dfa0;box-shadow:0 0 10px #8be5a188}.dot.off{background:#dcb66c;box-shadow:none}.head{padding:26px 0 84px;display:grid;grid-template-columns:1.4fr .6fr;gap:22px;align-items:center}.eyebrow{font-size:11px;color:#b0d8ba;letter-spacing:2.2px;text-transform:uppercase;font-weight:750}.head h1{font-size:clamp(38px,5vw,57px);letter-spacing:-2px;margin:8px 0 3px;font-weight:800}.subtitle{color:#c8e5d1;font-size:16px;margin:0}.meta{margin-top:25px;display:flex;flex-wrap:wrap;gap:10px}.chip{font-size:12px;color:#deeee4;border:1px solid #ffffff38;padding:8px 12px;border-radius:100px;background:#ffffff0c}.tree{justify-self:end;width:160px;height:160px;opacity:.8}.container{position:relative;margin-top:-55px;padding-bottom:100px}.panel{display:none}.panel.active{display:block}.nav{display:flex;gap:7px;padding:7px;border-radius:17px;background:#fff;box-shadow:var(--shadow);border:1px solid var(--line);margin-bottom:25px;position:sticky;top:8px;z-index:8;overflow-x:auto}.nav button{border:0;background:transparent;color:#6c7a70;border-radius:11px;display:flex;align-items:center;gap:8px;font-size:13px;padding:12px 18px;white-space:nowrap;font-weight:720}.nav button[aria-selected="true"]{background:#e5f1e8;color:var(--accent)}.section{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:14px 0 15px}.section h2{font-size:22px;letter-spacing:-.5px;margin:0}.section p{margin:4px 0 0;color:var(--muted);font-size:13px}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.metric,.card{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px}.metric{padding:20px;min-height:142px;position:relative;overflow:hidden}.metric:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--stripe,#65ad83)}.metric .label{font-weight:650;color:#728377;font-size:12px;display:flex;gap:8px;align-items:center}.metric .num{font-size:clamp(24px,3vw,32px);letter-spacing:-1px;font-weight:820;margin:14px 0 4px;font-variant-numeric:tabular-nums}.metric .hint{font-size:11px;color:#879387}.icon{font-size:17px;font-weight:normal}.card{padding:21px}.card h3{font-size:16px;margin:0 0 10px;letter-spacing:-.25px}.card p{margin:7px 0 0;font-size:13px;color:#62786b}.advice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:14px}.advice .card{min-height:148px}.adviceHeader{display:flex;align-items:center;gap:10px;font-weight:800;font-size:14px}.adviceIcon{display:flex;width:35px;height:35px;border-radius:11px;background:#ebf4ec;align-items:center;justify-content:center;font-size:17px}.pill{font-size:11px;background:#eaf2e9;color:#376e4f;border-radius:100px;padding:6px 9px;display:inline-block;font-weight:750}.pill.neutral{color:#796a40;background:#f5f0df}.pill.warn{color:#96513a;background:#fbede6}.miniInfo{margin-top:12px;padding:13px 14px;background:#ecf3ec;border-radius:11px;color:#456950;font-size:12px}.chartGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.chart{min-width:0}.chart canvas{display:block;height:205px;width:100%;touch-action:pan-y}.chart .metricMeta{display:flex;justify-content:space-between;color:#7a887d;font-size:11px;margin-top:12px}.ranges{display:flex;gap:6px;flex-wrap:wrap}.ranges button,.secondary,.primary,.outline{border-radius:10px;border:1px solid #dce7dd;padding:10px 13px;font-weight:750;font-size:12px;background:#fff;color:#476655}.ranges button.selected{background:#236e4e;color:white;border-color:#236e4e}.primary{background:var(--accent);color:white;border-color:var(--accent)}.primary:hover{background:#195c40}.outline{border-color:#e3d4c5;color:#96553d}.secondary{background:#edf4ee;color:#306d4f}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:12px;color:#667a6c;font-weight:750}.field input{width:100%;border:1px solid #dce5dc;border-radius:11px;background:#fcfdfa;padding:11px 12px;min-height:43px;color:var(--ink)}.field input[type=checkbox]{width:auto;min-height:0;accent-color:var(--accent)}.checkline{display:flex;gap:10px;align-items:center;font-size:13px}.full{grid-column:1/-1}.divider{height:1px;background:var(--line);margin:20px 0}.step{display:flex;gap:13px;margin-bottom:18px;align-items:flex-start}.stepnum{flex:none;width:29px;height:29px;border-radius:50%;background:#e6f2e9;display:grid;place-items:center;color:#28754c;font-weight:800;font-size:12px}.step b{font-size:13px}.step p{margin:4px 0 0}.bar{background:#e5eee6;height:10px;overflow:hidden;border-radius:99px;margin:12px 0}.bar span{display:block;height:100%;background:#2d9467;width:0;transition:width .4s}.alertBox{padding:15px 17px;border:1px solid #e9e3ce;background:#faf7ec;color:#746036;border-radius:12px;font-size:13px}.error{color:#a54736}.good{color:#247852}.subtle{font-size:12px;color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.diag{display:grid;grid-template-columns:1fr auto;gap:8px 14px;font-size:12px}.diag dt{color:#728477}.diag dd{margin:0;font-weight:700;text-align:right}.log{display:grid;gap:8px;margin-top:10px}.event{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}.event:last-child{border:0}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#183d30;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:0 10px 30px #173c3066;z-index:100;max-width:min(90vw,500px);text-align:center;font-size:13px;display:none}.toast.visible{display:block}.foot{text-align:center;color:#879587;font-size:11px;margin-top:35px}.hide{display:none!important}
 @media(max-width:760px){.wrap{padding:0 14px}.topbar{height:70px}.head{padding:18px 0 80px;grid-template-columns:1fr 90px}.tree{width:90px;height:90px}.meta{gap:6px}.chip{padding:6px 9px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.metric{padding:16px;min-height:120px}.metric .num{font-size:25px;margin:9px 0 3px}.advice,.chartGrid,.two{grid-template-columns:1fr}.card{padding:17px}.nav{position:fixed;bottom:0;top:auto;left:0;right:0;margin:0;border-radius:16px 16px 0 0;border-bottom:0;justify-content:space-around;padding:8px max(5px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom));overflow:visible;box-shadow:0 -6px 22px #0d2f2216}.nav button{flex-direction:column;gap:4px;padding:6px 5px;font-size:10px;min-width:62px}.container{padding-bottom:130px}.section h2{font-size:20px}.form{grid-template-columns:1fr}.toast{bottom:94px}}
 @media(prefers-color-scheme:dark){:root{color-scheme:dark;--ink:#edf3ed;--muted:#9bb7a5;--line:#344f3f;--bg:#101d18;--card:#203328;--accent:#73ca94;--forest:#173d30;--shadow:none}body{background:var(--bg)}.metric .label,.metric .hint,.card p,.section p,.chart .metricMeta{color:#acc2b0}.metric .num{color:#f4f7f1}.nav{background:#203328}.nav button[aria-selected="true"]{background:#305542;color:#c5f2d0}.pill{background:#355740;color:#b8e6c1}.miniInfo,.adviceIcon,.stepnum{background:#2d4434;color:#c0ecc8}.field input{background:#1a2d23;border-color:#49634e;color:#eaf6ee}.alertBox{background:#3d3321;border-color:#68563a;color:#e4cca1}.secondary,.ranges button{background:#2b4937;border-color:#48634b;color:#d2edd8}.ranges button.selected{background:#2a8659;color:white}.outline{background:#463329;border-color:#80553f;color:#f2bea4}.diag dt{color:#a9bdac}}
+
+/* Graphes interactifs, utilisables au toucher, sans dependance externe. */
+.graphControls{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:12px 0 16px}
+.graphControls button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 12px;border-radius:10px;font-size:12px;font-weight:700}
+.graphControls button:disabled{opacity:.35}
+.graphControls .selectedRange{font-size:11px;color:var(--muted);margin-left:auto}
+.chart canvas{cursor:crosshair;touch-action:pan-y}
+.chart .pointDetail{min-height:36px;line-height:1.5;margin-top:12px;border-radius:9px;background:var(--bg);padding:9px 12px;color:var(--ink);font-size:12px;font-weight:620}
+.chart .graphTip{margin:7px 0 2px;font-size:11px;color:var(--muted)}
+@media(max-width:760px){.graphControls .selectedRange{width:100%;margin-left:0}.chart canvas{height:245px}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap">
- <div class="topbar"><div class="brand"><span class="brandIcon">✦</span> DragonFruit <span style="font-weight:400;color:#b9d5c2;font-size:11px">MONITOR V3</span></div><div class="on"><span class="dot off" id="dot"></span><span id="connection">Connexion…</span></div></div>
+ <div class="topbar"><div class="brand"><span class="brandIcon">✦</span> DragonFruit <span style="font-weight:400;color:#b9d5c2;font-size:11px">MONITOR V3.1</span></div><div class="on"><span class="dot off" id="dot"></span><span id="connection">Connexion…</span></div></div>
  <div class="head"><div><div class="eyebrow">Mon jardin connecté</div><h1>DragonFruit</h1><p class="subtitle">Faux Poivrier · Suivi intelligent</p><div class="meta"><span class="chip" id="heroTemp">Température —</span><span class="chip" id="heroHr">Humidité —</span><span class="chip" id="heroTime">Mesure en attente</span></div></div>
   <svg class="tree" viewBox="0 0 150 150" aria-hidden="true"><path d="M75 123Q70 90 84 67M77 100Q57 85 45 69M78 84Q101 72 108 53" fill="none" stroke="#d9e2bc" stroke-width="7" stroke-linecap="round"/><g fill="#a8d5aa"><ellipse cx="43" cy="57" rx="27" ry="14" transform="rotate(-40 43 57)"/><ellipse cx="76" cy="53" rx="27" ry="17" transform="rotate(23 76 53)"/><ellipse cx="107" cy="46" rx="25" ry="14" transform="rotate(-24 107 46)"/><ellipse cx="59" cy="79" rx="18" ry="12" transform="rotate(20 59 79)"/></g><path d="M51 125H105L98 144H57Z" fill="#a68457"/></svg>
  </div>
@@ -47,7 +57,7 @@ button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.
   <div class="advice">
    <article class="card"><div class="adviceHeader"><span class="adviceIcon">♧</span> Arrosage</div><p id="soilAdvice">Nous attendons les mesures de la station.</p><div class="miniInfo" id="prediction">Prévision : en attente de deux références réelles.</div></article>
    <article class="card"><div class="adviceHeader"><span class="adviceIcon">☀</span> Éclairage</div><p id="lightAdvice">Il faut une journée de mesures au niveau des feuilles pour interpréter la lumière.</p><div class="miniInfo" id="lightSum">Historique en cours d'analyse.</div></article>
-   <article class="card"><div class="adviceHeader"><span class="adviceIcon">♨</span> Ambiance</div><p id="airAdvice">Analyse de la température et de l'humidité.</p><div class="miniInfo" id="vpd">VPD : —</div></article>
+   <article class="card"><div class="adviceHeader"><span class="adviceIcon">♨</span> Ambiance</div><p id="airAdvice">Analyse de la température et de l'humidité.</p><div class="miniInfo" id="vpd">VPD : —</div><div class="miniInfo" id="humidityAdvice">Brumisation systématique non recommandée : contrôler d’abord l'humidité de la pièce.</div></article>
    <article class="card"><div class="adviceHeader"><span class="adviceIcon">◈</span> Diagnostic</div><p id="healthAdvice">État de l'ESP32 et des capteurs.</p><div class="miniInfo" id="nextAction">Actualisation automatique toutes les 4 secondes.</div></article>
   </div>
 </section>
@@ -56,15 +66,24 @@ button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.
   <div class="ranges" role="group" aria-label="Période de l'historique">
    <button class="selected" data-hours="24">24 h</button><button data-hours="1">1 h</button><button data-hours="6">6 h</button><button data-hours="168">7 j</button><button data-hours="720">30 j</button>
   </div>
+   <div class="graphControls" aria-label="Explorer les courbes">
+    <button type="button" id="graphEarlier" title="Se déplacer vers les mesures plus anciennes">← Plus tôt</button>
+    <button type="button" id="graphZoomIn" title="Zoomer sur la période">Zoom +</button>
+    <button type="button" id="graphZoomOut" title="Dézoomer">Zoom −</button>
+    <button type="button" id="graphLater" title="Se déplacer vers les mesures récentes">Plus récent →</button>
+    <button type="button" id="graphReset">Réinitialiser</button>
+    <span class="selectedRange" id="graphRange">Touchez une courbe pour lire les mesures exactes.</span>
+   </div>
   <div class="chartGrid" id="chartGrid">
-   <article class="card chart"><h3>Substrat · valeur brute</h3><canvas data-series="soil" aria-label="Graphique du substrat"></canvas><div class="metricMeta"><span>ADC 0–4095</span><span id="stat-soil">—</span></div></article>
-   <article class="card chart"><h3>Température de l'air</h3><canvas data-series="temperature" aria-label="Graphique de température"></canvas><div class="metricMeta"><span>°C</span><span id="stat-temperature">—</span></div></article>
-   <article class="card chart"><h3>Humidité de l'air</h3><canvas data-series="humidity" aria-label="Graphique d'humidité"></canvas><div class="metricMeta"><span>% HR</span><span id="stat-humidity">—</span></div></article>
-   <article class="card chart"><h3>Luminosité</h3><canvas data-series="lux" aria-label="Graphique d'éclairage"></canvas><div class="metricMeta"><span>lux</span><span id="stat-lux">—</span></div></article>
-   <article class="card chart"><h3>Pression atmosphérique</h3><canvas data-series="pressure" aria-label="Graphique de pression"></canvas><div class="metricMeta"><span>hPa</span><span id="stat-pressure">—</span></div></article>
-   <article class="card chart"><h3>Température du substrat</h3><canvas data-series="soilTemperature" aria-label="Graphique température racines"></canvas><div class="metricMeta"><span>°C · DS18B20</span><span id="stat-soilTemperature">—</span></div></article>
-  </div>
-  <div class="actions"><a class="secondary" href="/export.csv?hours=168" download>Exporter 7 jours (CSV)</a><a class="secondary" href="/export.csv?hours=720" download>Exporter 30 jours (CSV)</a></div>
+   <article class="card chart"><h3>Substrat · valeur brute</h3><canvas data-series="soil" aria-label="Graphique du substrat"></canvas><div class="pointDetail" id="detail-soil" role="status">Touchez ou déplacez le curseur sur une courbe pour lire la valeur et l’heure exacte.</div><div class="metricMeta"><span>ADC 0–4095</span><span id="stat-soil">—</span></div></article>
+   <article class="card chart"><h3>Température de l'air</h3><canvas data-series="temperature" aria-label="Graphique de température"></canvas><div class="pointDetail" id="detail-temperature" role="status">Touchez ou déplacez le curseur sur une courbe pour lire la valeur et l’heure exacte.</div><div class="metricMeta"><span>°C</span><span id="stat-temperature">—</span></div></article>
+   <article class="card chart"><h3>Humidité de l'air</h3><canvas data-series="humidity" aria-label="Graphique d'humidité"></canvas><div class="pointDetail" id="detail-humidity" role="status">Touchez ou déplacez le curseur sur une courbe pour lire la valeur et l’heure exacte.</div><div class="metricMeta"><span>% HR</span><span id="stat-humidity">—</span></div></article>
+   <article class="card chart"><h3>Luminosité</h3><canvas data-series="lux" aria-label="Graphique d'éclairage"></canvas><div class="pointDetail" id="detail-lux" role="status">Touchez ou déplacez le curseur sur une courbe pour lire la valeur et l’heure exacte.</div><div class="metricMeta"><span>lux</span><span id="stat-lux">—</span></div></article>
+   <article class="card chart"><h3>Pression atmosphérique</h3><canvas data-series="pressure" aria-label="Graphique de pression"></canvas><div class="pointDetail" id="detail-pressure" role="status">Touchez ou déplacez le curseur sur une courbe pour lire la valeur et l’heure exacte.</div><div class="metricMeta"><span>hPa</span><span id="stat-pressure">—</span></div></article>
+   <article class="card chart"><h3>Température du substrat</h3><canvas data-series="soilTemperature" aria-label="Graphique température racines"></canvas><div class="pointDetail" id="detail-soilTemperature" role="status">Touchez ou déplacez le curseur sur une courbe pour lire la valeur et l’heure exacte.</div><div class="metricMeta"><span>°C · DS18B20</span><span id="stat-soilTemperature">—</span></div></article>
+    <article class="card chart"><h3>Comparer l'air et les racines</h3><canvas data-series="compareTemp" aria-label="Températures air et racines" ></canvas><div class="pointDetail" id="detail-compareTemp" role="status">Touchez la courbe pour comparer la température de l'air et celle des racines.</div><div class="metricMeta"><span>Air : orange · racines : vert</span><span id="stat-compareTemp">—</span></div></article>
+   </div>
+   <div class="actions"><a class="secondary" id="exportPeriod" href="/export.csv?hours=24" download>Exporter 24 h (CSV complet)</a></div><p class="subtle">Le CSV contient toutes les mesures enregistrées sur la période choisie, même si tu as zoomé sur les graphiques.</p>
   <div class="miniInfo">Les anciennes mesures V2.2 sont affichées avec les nouvelles V3. Les variations après déplacement de la sonde ne doivent pas être interprétées comme un arrosage.</div>
 </section>
 <section class="panel" id="care">
@@ -95,10 +114,10 @@ button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.
     <div class="field full"><label>Analyse lumière</label><span class="checkline"><input type="checkbox" name="lightAlerts" id="lightAlerts" disabled> Alerte automatique après plusieurs journées (à venir)</span><div class="subtle">L'analyse est déjà affichée. Pas d'alerte Telegram sur un simple lux ponctuel.</div></div>
     <div class="full"><button class="primary" type="submit">Sauvegarder les réglages</button></div>
    </form><div class="actions"><button class="secondary" id="telegramTestBtn">Envoyer un test Telegram</button></div></article>
-   <article class="card"><h3>Station ESP32</h3><dl class="diag"><dt>Wi-Fi</dt><dd id="dWifi">—</dd><dt>Adresse IP</dt><dd id="dIp">—</dd><dt>Horloge</dt><dd id="dClock">—</dd><dt>Dernière sauvegarde</dt><dd id="dSaved">—</dd><dt>LittleFS</dt><dd id="dFs">—</dd><dt>AHT20</dt><dd id="dAht">—</dd><dt>BMP280</dt><dd id="dBmp">—</dd><dt>BH1750</dt><dd id="dBh">—</dd><dt>DS18B20</dt><dd id="dDs">En attente</dd><dt>Telegram</dt><dd id="dTg">—</dd></dl><div class="divider"></div><p>La V3 écrit dans <code>/v3/</code> et laisse intacts les anciens fichiers V2.2. Sauvegarde les exports avant chaque mise à jour.</p><div class="miniInfo">Le serveur fonctionne sur le réseau local. Les notifications Telegram fonctionnent aussi hors de chez toi si l'ESP32 reste connecté à Internet.</div></article>
+   <article class="card"><h3>Station ESP32</h3><dl class="diag"><dt>Wi-Fi</dt><dd id="dWifi">—</dd><dt>Adresse IP</dt><dd id="dIp">—</dd><dt>Horloge</dt><dd id="dClock">—</dd><dt>Dernière sauvegarde</dt><dd id="dSaved">—</dd><dt>Diagnostic stockage</dt><dd id="dStorage">—</dd><dt>Dernier redémarrage</dt><dd id="dReset">—</dd><dt>RAM disponible</dt><dd id="dHeap">—</dd><dt>Moniteur extérieur</dt><dd id="dHeartbeat">—</dd><dt>LittleFS</dt><dd id="dFs">—</dd><dt>AHT20</dt><dd id="dAht">—</dd><dt>BMP280</dt><dd id="dBmp">—</dd><dt>BH1750</dt><dd id="dBh">—</dd><dt>DS18B20</dt><dd id="dDs">En attente</dd><dt>Telegram</dt><dd id="dTg">—</dd></dl><div class="divider"></div><p>La V3 écrit dans <code>/v3/</code> et laisse intacts les anciens fichiers V2.2. Sauvegarde les exports avant chaque mise à jour.</p><div class="miniInfo">Le serveur fonctionne sur le réseau local. Les notifications Telegram fonctionnent aussi hors de chez toi si l'ESP32 reste connecté à Internet.</div></article>
   </div>
  </section>
- <div class="foot">DragonFruit Monitor V3.0 · Mesures environnementales, pas diagnostic médical ou botanique · ESP32</div>
+ <div class="foot">DragonFruit Monitor V3.1 · Mesures environnementales, pas diagnostic médical ou botanique · ESP32</div>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
@@ -106,11 +125,12 @@ button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.
 const $=id=>document.getElementById(id);
 const val=(v,unit='',digits=1)=>v==null || !Number.isFinite(Number(v)) ? '—' : Number(v).toLocaleString('fr-BE',{maximumFractionDigits:digits})+(unit?' '+unit:'');
 let state=null, hours=24, history=[], live=[], tab='home', busyHistory=false, settingsDirty=false;
+let waterTimes=[],graphZoom=1,graphPan=0,graphCursor=null;
 function toast(message){const e=$('toast');e.textContent=message;e.classList.add('visible');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('visible'),4500);}
 function stamp(s){if(!s || s<1700000000)return 'Heure non synchronisée';return new Date(s*1000).toLocaleString('fr-BE',{dateStyle:'short',timeStyle:'short'});}
-function chooseTab(t){tab=t;document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===t));document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===t)));if(t==='graphs'){loadHistory();}if(t==='care')loadWater();}
+function chooseTab(t){tab=t;document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===t));document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===t)));if(t==='graphs'){loadHistory();loadWater();}if(t==='care')loadWater();}
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>chooseTab(b.dataset.tab)));
-document.querySelectorAll('[data-hours]').forEach(b=>b.addEventListener('click',()=>{hours=Number(b.dataset.hours);document.querySelectorAll('[data-hours]').forEach(x=>x.classList.toggle('selected',x===b));loadHistory();}));
+document.querySelectorAll('[data-hours]').forEach(b=>b.addEventListener('click',()=>{hours=Number(b.dataset.hours);graphZoom=1;graphPan=0;graphCursor=null;document.querySelectorAll('[data-hours]').forEach(x=>x.classList.toggle('selected',x===b));setExportLink();loadHistory();}));
 const fetchJson=async(url,opts)=>{let r=await fetch(url,{cache:'no-store',...opts});let body=await r.json();if(!r.ok)throw Error(body.message||('Erreur HTTP '+r.status));return body;};
 async function post(url,params={}){
  const key=sessionStorage.getItem('dragonfruit-code')||prompt('Code de contrôle défini dans secrets.h :');
@@ -139,13 +159,13 @@ function showAdvice(s){
  const air=Number(s.temperature),rh=Number(s.humidity);
  if(s.temperature==null || s.humidity==null)$('airAdvice').textContent='Capteur AHT20 indisponible. Vérifie le module et ses câbles.';
  else if(air<c.tLow||air>c.tHigh)$('airAdvice').textContent='Température hors de la plage configurée. Vérifie le placement de DragonFruit.';
- else if(rh<c.rhLow)$('airAdvice').textContent='Humidité ambiante faible. Éloigne l’arbre des sources d’air sec et surveille.';
+ else if(rh<c.rhLow)$('airAdvice').textContent='Air sec : vérifie le placement de l’AHT20. Éloigne DragonFruit du chauffage et privilégie un humidificateur d’air si la sécheresse persiste.';
  else if(rh>c.rhHigh)$('airAdvice').textContent='Humidité ambiante élevée. Vérifie la ventilation et les gouttes sur les feuilles.';
  else $('airAdvice').textContent='Température et humidité de l’air dans les plages choisies. Pas de correction immédiate.';
  if(s.temperature!=null&&s.humidity!=null){const e=.6108*Math.exp(17.27*air/(air+237.3))*(1-rh/100);$('vpd').textContent='Demande évaporative de l’air (VPD) : '+val(e,'kPa',2)+' · indicateur, pas ordre d’arroser';}
  else $('vpd').textContent='VPD indisponible sans température et humidité.';
  let missing=[];if(!s.ahtOK)missing.push('AHT20');if(!s.bmpOK)missing.push('BMP280');if(!s.bhOK)missing.push('BH1750');if(s.dsEver&&!s.dsOK)missing.push('DS18B20');
- $('healthAdvice').textContent=missing.length?'Capteur(s) à vérifier : '+missing.join(', ')+'.':s.fs?'Station et capteurs déjà installés accessibles.':'Stockage LittleFS indisponible : historiques non sauvegardés.';
+ $('healthAdvice').textContent=s.storageFault?'Attention : nouvelle sauvegarde impossible. Vérifie la mémoire LittleFS et la connexion.':missing.length?'Capteur(s) à vérifier : '+missing.join(', ')+'.':s.fs?'Station et capteurs déjà installés accessibles.':'Stockage LittleFS indisponible : historiques non sauvegardés.';
  $('nextAction').textContent=s.dsOK?'DS18B20 détecté : température des racines suivie.':'Le DS18B20 reste facultatif jusqu’à son installation.';
 }
 function populateSettings(s){if(settingsDirty)return;const c=s.config||{};for(const k of ['tLow','tHigh','rhLow','rhHigh','lightLow'])$(k).value=c[k]??'';$('telegramOn').checked=!!c.telegram;$('lightAlerts').checked=!!c.lightAlerts;}
@@ -160,6 +180,9 @@ function render(s){
  $('rootHint').textContent=s.dsOK?'DS18B20 · température substrat':s.dsEver?'DS18B20 · vérifier la connexion':'DS18B20 · prévu mercredi';
  $('dWifi').textContent=s.wifi?'Connecté · '+s.rssi+' dBm':'Déconnecté';$('dIp').textContent=s.ip||'—';
  $('dClock').textContent=s.clock?'Synchronisée':'En attente';$('dSaved').textContent=stamp(s.lastSaved);
+ $('dStorage').textContent=s.storageFault?'ALERTE : sauvegarde interrompue':s.lastSaveOK?'Écriture déclarée OK':'Échec à vérifier';
+ $('dReset').textContent=s.resetReason??'—';$('dHeap').textContent=s.freeHeap?Math.round(s.freeHeap/1024)+' Ko':'—';
+ $('dHeartbeat').textContent=s.lastHeartbeatHttp===200?'Dernier ping reçu':s.lastHeartbeatHttp?'Code HTTP '+s.lastHeartbeatHttp:'Non actif / non confirmé';
  $('dFs').textContent=s.fs?Math.round(s.fsUsed/1024)+' / '+Math.round(s.fsTotal/1024)+' Ko'+(s.lastSaveOK?'':' · erreur écriture'):'NON MONTÉ';
  $('dAht').textContent=s.ahtOK?'OK':'Absent';$('dBmp').textContent=s.bmpOK?'OK':'Absent';$('dBh').textContent=s.bhOK?'OK':'Absent';
  $('dDs').textContent=s.dsOK?'OK':s.dsEver?'Absent · vérifier':'En attente';$('dTg').textContent=s.telegramConfigured?'Configuré':'Token absent';
@@ -174,35 +197,98 @@ function mergePoints(a,b){const all=[...a,...b].filter(p=>p&&p.epoch>1700000000)
 async function loadHistory(){if(busyHistory)return;busyHistory=true;try{
  const h=hours;const [past,newLive]=await Promise.all([fetchJson('/api/history?hours='+h),fetchJson('/api/live')]);
  if(hours!==h)return;live=newLive;
- history=mergePoints(past,newLive);drawCharts();analyzeLight(history);
+ history=mergePoints(past,newLive);drawCharts();analyzeLight(history);analyzeHumidity(history);
  }catch(e){toast('Historique : '+e.message);}finally{busyHistory=false;}}
 async function loadWater(){try{
   const response=await fetch('/arrosages.csv',{cache:'no-store'});if(!response.ok)throw Error('Journal inaccessible');
-  const content=await response.text();const list=content.split(/\r?\n/).map(s=>Number(s.trim())).filter(t=>t>1700000000).sort((a,b)=>b-a).slice(0,12);
+  const content=await response.text();waterTimes=content.split(/\r?\n/).map(s=>Number(s.trim())).filter(t=>t>1700000000).sort((a,b)=>b-a);const list=waterTimes.slice(0,12);if(tab==='graphs')drawCharts();
   const target=$('waterLog');target.replaceChildren();
   if(!list.length){target.textContent='Aucun arrosage enregistré pour le moment.';return;}
   for(const t of list){const item=document.createElement('div');item.className='event';const a=document.createElement('b');a.textContent='Arrosage';const b=document.createElement('span');b.textContent=stamp(t);item.append(a,b);target.append(item);}
  }catch(e){$('waterLog').textContent=e.message;}}
-const chartNames={soil:'ADC',temperature:'°C',humidity:'% HR',lux:'lux',pressure:'hPa',soilTemperature:'°C'};
-const chartColors={soil:'#2e8b62',temperature:'#d9926d',humidity:'#619bc0',lux:'#d7a348',pressure:'#9a8cbd',soilTemperature:'#7dba91'};
+const chartNames={soil:'ADC',temperature:'°C',humidity:'% HR',lux:'lux',pressure:'hPa',soilTemperature:'°C',compareTemp:'°C'};
+const chartColors={soil:'#2e8b62',temperature:'#d9926d',humidity:'#619bc0',lux:'#d7a348',pressure:'#9a8cbd',soilTemperature:'#7dba91',compareTemp:'#d9926d'};
+function setExportLink(){const a=$('exportPeriod'),labels={1:'1 h',6:'6 h',24:'24 h',168:'7 jours',720:'30 jours'};a.href='/export.csv?hours='+hours;a.textContent='Exporter '+labels[hours]+' (CSV complet)';}
+function chartDomain(){
+ if(!history.length)return null;
+ const t0=history[0].epoch,t1=history[history.length-1].epoch;
+ const entire=Math.max(60,t1-t0),span=Math.max(120,entire/graphZoom);
+ const back=Math.max(0,entire-span)*graphPan;
+ return {start:t1-back-span,end:t1-back,span};
+}
+function chartPoints(key){return history.filter(p=>p.epoch>1700000000&&p[key]!=null&&Number.isFinite(Number(p[key]))).map(p=>({t:p.epoch,v:Number(p[key])}));}
+function nearest(pts,t){if(!pts.length)return null;let lo=0,hi=pts.length-1;while(lo<hi){const m=(lo+hi)>>1;if(pts[m].t<t)lo=m+1;else hi=m;}if(lo>0&&Math.abs(pts[lo-1].t-t)<Math.abs(pts[lo].t-t))lo--;return pts[lo];}
 function drawOne(canvas){
  const key=canvas.dataset.series,ctx=canvas.getContext('2d'),rect=canvas.getBoundingClientRect(),w=Math.max(250,Math.floor(rect.width)),h=Math.max(120,Math.floor(rect.height)),dpr=Math.min(2,window.devicePixelRatio||1);
  canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
- const dark=matchMedia('(prefers-color-scheme: dark)').matches;ctx.font='11px ui-sans-serif, sans-serif';
- const pts=history.filter(p=>p[key]!=null && Number.isFinite(Number(p[key]))&&p.epoch>1700000000).map(p=>({t:p.epoch,v:Number(p[key])}));
- $('stat-'+key).textContent=pts.length?'Min '+val(Math.min(...pts.map(p=>p.v)),chartNames[key],1)+' · Max '+val(Math.max(...pts.map(p=>p.v)),chartNames[key],1):'En attente';
- if(pts.length<2){ctx.textAlign='center';ctx.fillStyle=dark?'#aec1af':'#899b8d';ctx.fillText('Pas assez de données sur cette période',w/2,h/2);return;}
- const left=45,right=10,top=13,bottom=25,x0=left,x1=w-right,y0=top,y1=h-bottom;
- let mi=Math.min(...pts.map(p=>p.v)),ma=Math.max(...pts.map(p=>p.v)),margin=(ma-mi)*.12||Math.max(1,Math.abs(ma)*.025);
- mi-=margin;ma+=margin;const t0=pts[0].t,t1=pts[pts.length-1].t;
- const x=t=>x0+(t-t0)/Math.max(1,t1-t0)*(x1-x0),y=v=>y1-(v-mi)/Math.max(.00001,ma-mi)*(y1-y0);
+ const dark=matchMedia('(prefers-color-scheme: dark)').matches,dom=chartDomain(),detail=$('detail-'+key);
+ ctx.font='11px ui-sans-serif, sans-serif';
+ if(!dom){detail.textContent='Aucun relevé enregistré.';return;}
+ const left=49,right=12,top=16,bottom=29,x0=left,x1=w-right,y0=top,y1=h-bottom;
+ const names=key==='compareTemp'?['temperature','soilTemperature']:[key];
+ const lines=names.map(k=>chartPoints(k).filter(p=>p.t>=dom.start&&p.t<=dom.end));
+ const all=lines.flat();
+ if(all.length<2){ctx.textAlign='center';ctx.fillStyle=dark?'#aec1af':'#899b8d';ctx.fillText('Pas assez de données sur cette période',w/2,h/2);detail.textContent='Élargis la période ou attends de nouvelles mesures.';return;}
+ let mi=Math.min(...all.map(p=>p.v)),ma=Math.max(...all.map(p=>p.v)),margin=(ma-mi)*.12||Math.max(.5,Math.abs(ma)*.025);
+ mi-=margin;ma+=margin;
+ const x=t=>x0+(t-dom.start)/Math.max(1,dom.span)*(x1-x0),y=v=>y1-(v-mi)/Math.max(.00001,ma-mi)*(y1-y0);
  ctx.strokeStyle=dark?'#3d5947':'#e8ede7';ctx.lineWidth=1;ctx.fillStyle=dark?'#acc0ac':'#75867a';ctx.textAlign='right';
  for(let i=0;i<=3;i++){const yy=y0+(y1-y0)*i/3;ctx.beginPath();ctx.moveTo(x0,yy);ctx.lineTo(x1,yy);ctx.stroke();ctx.fillText((ma-(ma-mi)*i/3).toFixed(key==='soil'||key==='lux'?0:1),x0-7,yy+4);}
- ctx.textAlign='center';ctx.fillText(new Date(t0*1000).toLocaleString('fr-BE',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}),x0+30,h-5);ctx.fillText(new Date(t1*1000).toLocaleString('fr-BE',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}),w-56,h-5);
- ctx.strokeStyle=chartColors[key];ctx.lineWidth=2.4;ctx.lineJoin='round';ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(x(p.t),y(p.v)):ctx.moveTo(x(p.t),y(p.v)));ctx.stroke();
- const p=pts[pts.length-1];ctx.fillStyle=chartColors[key];ctx.beginPath();ctx.arc(x(p.t),y(p.v),3.4,0,Math.PI*2);ctx.fill();
+ ctx.textAlign='center';const axisFmt=t=>new Date(t*1000).toLocaleString('fr-BE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});ctx.fillText(axisFmt(dom.start),x0+30,h-5);ctx.fillText(axisFmt(dom.end),w-52,h-5);
+ if(key==='soil')for(const t of waterTimes){if(t<dom.start||t>dom.end)continue;ctx.setLineDash([4,4]);ctx.strokeStyle='#429ad3';ctx.beginPath();ctx.moveTo(x(t),y0);ctx.lineTo(x(t),y1);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#429ad3';ctx.textAlign='center';ctx.fillText('arrosage',Math.max(82,Math.min(w-50,x(t))),13);}
+ let gapCount=0;
+ lines.forEach((pts,j)=>{
+   ctx.strokeStyle=chartColors[names[j]];ctx.lineWidth=2.2;ctx.lineJoin='round';ctx.beginPath();
+   for(let i=0;i<pts.length;i++){
+     const p=pts[i],wasGap=i>0&&(p.t-pts[i-1].t>900);if(wasGap)gapCount++;
+     if(i===0||wasGap)ctx.moveTo(x(p.t),y(p.v));else ctx.lineTo(x(p.t),y(p.v));
+   }ctx.stroke();
+   const p=pts[pts.length-1];if(p){ctx.fillStyle=chartColors[names[j]];ctx.beginPath();ctx.arc(x(p.t),y(p.v),3,0,Math.PI*2);ctx.fill();}
+ });
+ const vals=all.map(p=>p.v);$('stat-'+key).textContent='Min '+val(Math.min(...vals),chartNames[key],1)+' · Max '+val(Math.max(...vals),chartNames[key],1);
+ if(graphCursor!=null&&graphCursor>=dom.start&&graphCursor<=dom.end){
+   ctx.save();ctx.setLineDash([3,4]);ctx.strokeStyle=dark?'#deded3':'#506959';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x(graphCursor),y0);ctx.lineTo(x(graphCursor),y1);ctx.stroke();ctx.restore();
+   let txt=[];
+   for(let j=0;j<lines.length;j++){
+     const p=nearest(lines[j],graphCursor);if(p&&Math.abs(p.t-graphCursor)<=900){ctx.fillStyle=chartColors[names[j]];ctx.beginPath();ctx.arc(x(p.t),y(p.v),4.5,0,Math.PI*2);ctx.fill();txt.push((key==='compareTemp'?(j===0?'Air':'Racines'):'Valeur')+' : '+val(p.v,chartNames[key],key==='soil'?0:2));}
+   }
+   detail.textContent=new Date(graphCursor*1000).toLocaleString('fr-BE',{dateStyle:'short',timeStyle:'medium'})+' · '+(txt.length?txt.join(' · '):'Pas de mesure à cette heure');
+ }else detail.textContent='Touchez ou faites glisser sur la courbe pour afficher la mesure exacte et son heure.';
+ if(gapCount)detail.textContent+=' · '+gapCount+' interruption(s) de mesures dans cette vue.';
 }
-function drawCharts(){document.querySelectorAll('canvas[data-series]').forEach(drawOne);}
+function drawCharts(){document.querySelectorAll('canvas[data-series]').forEach(drawOne);const d=chartDomain();if(d)$('graphRange').textContent=stamp(d.start)+' → '+stamp(d.end);$('graphEarlier').disabled=graphPan>=1;$('graphLater').disabled=graphPan<=0;$('graphZoomOut').disabled=graphZoom<=1;}
+function onGraphPointer(ev){
+ const canvas=ev.currentTarget,dom=chartDomain();if(!dom)return;
+ const rect=canvas.getBoundingClientRect(),ratio=Math.max(0,Math.min(1,(ev.clientX-rect.left-49)/Math.max(1,rect.width-61)));
+ const guess=dom.start+ratio*dom.span;
+ const k=canvas.dataset.series,pts=chartPoints(k==='compareTemp'?'temperature':k).filter(p=>p.t>=dom.start&&p.t<=dom.end);
+ const p=nearest(pts,guess);if(!p)return;graphCursor=p.t;drawCharts();
+}
+document.querySelectorAll('canvas[data-series]').forEach(c=>{
+ c.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'||e.buttons)onGraphPointer(e)});
+ c.addEventListener('pointerdown',onGraphPointer);
+ c.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
+  e.preventDefault();const dom=chartDomain(),pts=chartPoints(c.dataset.series==='compareTemp'?'temperature':c.dataset.series).filter(p=>p.t>=dom.start&&p.t<=dom.end);if(!pts.length)return;
+  const current=nearest(pts,graphCursor??pts[pts.length-1].t),i=pts.indexOf(current),next=Math.max(0,Math.min(pts.length-1,i+(e.key==='ArrowLeft'?-1:1)));graphCursor=pts[next].t;drawCharts();
+ }});
+ c.tabIndex=0;
+});
+$('graphZoomIn').onclick=()=>{const d=chartDomain();graphZoom=Math.min(16,graphZoom*2);graphPan=0;graphCursor=null;drawCharts();};
+$('graphZoomOut').onclick=()=>{graphZoom=Math.max(1,graphZoom/2);graphPan=0;graphCursor=null;drawCharts();};
+$('graphEarlier').onclick=()=>{graphPan=Math.min(1,graphPan+.25);graphCursor=null;drawCharts();};
+$('graphLater').onclick=()=>{graphPan=Math.max(0,graphPan-.25);graphCursor=null;drawCharts();};
+$('graphReset').onclick=()=>{graphZoom=1;graphPan=0;graphCursor=null;drawCharts();};
+setExportLink();
+function analyzeHumidity(points){
+ const el=$('humidityAdvice'),valid=points.filter(p=>p.humidity!=null&&Number.isFinite(Number(p.humidity))&&p.epoch>1700000000).sort((a,b)=>a.epoch-b.epoch);
+ if(!valid.length){el.textContent='Humidité : en attente de mesures fiables près des feuilles.';return;}
+ const last=valid[valid.length-1],recent=valid.filter(p=>p.epoch>=last.epoch-2*3600);
+ const covered=recent.length>=12&&recent[recent.length-1].epoch-recent[0].epoch>90*60&&!recent.slice(1).some((p,i)=>p.epoch-recent[i].epoch>900);
+ const low=covered&&recent.filter(p=>p.humidity<35).length/recent.length>=.8;
+ if(low)el.textContent='Air sec persistant pendant environ 2 h. Vérifie que l’AHT20 est éloigné de l’ESP32 ; envisage un petit humidificateur de pièce si besoin. Évite de brumiser systématiquement le feuillage : effet bref et humidité résiduelle sur les feuilles.';
+ else if(last.humidity<35)el.textContent='Air sec sur la dernière mesure, mais durée encore incertaine. Vérifie le placement du capteur avant toute action.';
+ else el.textContent='Aucune brumisation nécessaire : surveille la tendance de l’humidité ambiante, en gardant une bonne ventilation.';
+}
 function analyzeLight(points){
  const byDay=new Map();const sorted=points.filter(p=>p.lux!=null&&Number.isFinite(Number(p.lux))).sort((a,b)=>a.epoch-b.epoch);
  for(let i=0;i<sorted.length;i++){
